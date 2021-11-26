@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deezer - Home</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html" id="active"> Accueil</a></li>
+                <li><a href="favoris.html">Mes favoris</a></li>
+            </ul>
+        </nav>
+    </header>
+        <main>
+            <section>
+                <picture>
+                    <img src="img/logo_deezer.jpg" id="logo_deezer" alt="application Logo-Deezer">
+                </picture>
+            </section>
+            <section id="contenu">
+                <h1> Bienvenue</h1>
+                <h2> sur l'application Deez’Web</h2>
+                <form id="formulaire"> 
+                    <div id="input-customiser">
+                        <div id="containt-input">
+                        <svg version="1.1" id="Capa_1" width="18px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 512.005 512.005" style="enable-background:new 0 0 512.005 512.005;" xml:space="preserve">
+<g>
+	<g>
+		<path d="M505.749,475.587l-145.6-145.6c28.203-34.837,45.184-79.104,45.184-127.317c0-111.744-90.923-202.667-202.667-202.667
+			S0,90.925,0,202.669s90.923,202.667,202.667,202.667c48.213,0,92.48-16.981,127.317-45.184l145.6,145.6
+			c4.16,4.16,9.621,6.251,15.083,6.251s10.923-2.091,15.083-6.251C514.091,497.411,514.091,483.928,505.749,475.587z
+			 M202.667,362.669c-88.235,0-160-71.765-160-160s71.765-160,160-160s160,71.765,160,160S290.901,362.669,202.667,362.669z"/>
+	</g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+                        </svg>
+                        <input type="text" id="search" name="name" value="" size="10">
+                        </div>
+                    </div>
+                    <label for="tri"></label>
+                    <div id="select-customiser">
+                        <select name="pets" id="pet-select">
+                            <option value="">Triez les résultats par </option>
+                            <option value="dog">Album</option>
+                            <option value="cat">Artiste</option>
+                            <option value="hamster">Musique</option>
+                            <option value="parrot">Les plus populaires</option>
+                            <option value="spider">Les mieux notés</option>
+                        </select>
+                    </div>
+                    <button type="submit" id="Validation">Rechercher</button>
+                </form>
+                <h4 id="h2-resultat"> Résultats de la recherche </h4>
+                <div class="wrap-article">
+                    <div id="result">
+                    </div>
+                </div>
+            </section>
+            
+        </main>
+    </body>
+    <!-- Il faut toujours mettre les scripts en bas pour pouvoir les pointer dans le JS aprés -->
+    <script src="js/search.js"></script>
+    <!-- <script src = " https://e-cdns-files.dzcdn.net/js/min/dz.js " ></script> -->
+</html>
