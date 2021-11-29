@@ -5,8 +5,10 @@
 /********************************************************/
 
 const wrapArticle = document.getElementById("wrap-article"); // on cible dans la page HTML la div #result
+const titleResultat = document.getElementById("h2-resultat");
 const formulaire = document.getElementById("formulaire");
 const requete = document.getElementById("search");
+// const footer = document.getElementById("footer");
 
 let resultats = []; // La variable te permet de varier les choses tu définis quelque chose qui va changer aprés, cette variable est un tableau
 // déclaration d'une variable tableau
@@ -17,12 +19,12 @@ let resultats = []; // La variable te permet de varier les choses tu définis qu
 /********************************************************/
 /********************************************************/
 
-async function VaChercherDanslAPI(requete) {
-  await fetch(`https://api.deezer.com/search?q=${requete}`)
+async function VaChercherDanslAPI(motcles) {
+  await fetch(`https://api.deezer.com/search?q=${motcles}`)
     .then((reponse) => reponse.json())
     .then((reponse) => (resultats = reponse.data)); // Tu mets la réponse dans la variable : resultats
   // On teste le fetch pour voir si ça fonctionne
-  // console.log(resultats);
+  console.log(motcles);
 }
 
 // La méthode textContent permet de récupérer le contenu sans les caractères spécifiques
@@ -32,7 +34,10 @@ async function VaChercherDanslAPI(requete) {
 // duree.textContent = result.data[0].duration;
 
 function Results() {
-  resultats.length = 25;
+  // resultats.length = 23;
+  console.log(resultats.length);
+  titleResultat.textContent =
+    `Résultats de la recherche : ` + resultats.length + ` musiques`;
   wrapArticle.innerHTML = resultats
     .map(
       (music) =>
@@ -57,14 +62,16 @@ function Results() {
     )
     .join(" ");
 }
+/* Recupérer l'élement qui est dans l'input */
 requete.addEventListener("input", (event) => {
   event.preventDefault();
-  // console.log(e.target.value);
-  VaChercherDanslAPI(event.target.value);
+  // console.log(event.target.value);
+  VaChercherDanslAPI(event.target.value); // event.target c'est le contenu qui est dans l'input et que met en paramètre dans la fonction VaChercherDanslAPI()
 });
+
 /*  Lorsque l'on clique sur valider ça s'affiche */
 formulaire.addEventListener("submit", (event) => {
   event.preventDefault();
-  VaChercherDanslAPI().then(() => Results());
-  console.log(event);
+
+  Results(); // On déclenche la function Results()
 });

@@ -7,7 +7,7 @@ label {
   border-radius: 30px;
   width: 80%;
   height: 50px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Outfit", sans-serif;
   padding-left: 15px;
 }
 
@@ -19,10 +19,12 @@ label {
   height: 50px;
   margin-left: 10px;
 }
-
+#contenu {
+  margin-top: 120px;
+}
 select {
   border: none;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Outfit", sans-serif;
   margin-top: 15px;
 }
 
@@ -33,7 +35,7 @@ input {
 }
 
 #containt-input {
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 select::after {
@@ -50,7 +52,7 @@ button {
   color: #fff;
   padding: 0px 30px 0px 30px;
   font-weight: 600;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Outfit", sans-serif;
 }
 
 button:hover {
@@ -98,7 +100,7 @@ p {
 }
 
 form {
-  margin-top: 30px;
+  margin: 30px 0px 30px 0px;
   display: flex;
   border-radius: 20px;
 }
@@ -114,11 +116,20 @@ form {
 
 article {
   display: inline-block;
-
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   margin-top: 5px;
   margin-bottom: 5px;
   border: 1px solid #f0f0f0;
   border-radius: 5px;
+}
+article:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(148, 148, 148, 0.12) 0px -12px 30px,
+    rgba(148, 148, 148, 0.12) 0px 4px 6px,
+    rgba(148, 148, 148, 0.17) 0px 12px 13px,
+    rgba(148, 148, 148, 0.09) 0px -3px 5px;
+
+  transition: 1s;
 }
 .contentarticle {
   padding: 20px;
@@ -153,9 +164,4 @@ input[type="checkbox"].demo3 + label::before {
 input[type="checkbox"].demo3:checked + label::before {
   content: "\f14a";
   color: #00b7e8;
-}
-
-#article::after {
-  display: none !important;
-  content: "dks,,dk";
 }
