@@ -34,11 +34,16 @@ h2 {
 }
 
 h3 {
-  font-weight: 800;
+  font-weight: 500;
   margin: 0;
 }
 
 h4 {
+  margin-bottom: 10px;
+}
+
+h5 {
+  font-weight: 300;
   margin-bottom: 10px;
 }
 
@@ -54,4 +59,14 @@ p {
 input::placeholder {
   font-family: "Outfit", sans-serif;
   color: #f0f0f0;
+}
+
+#logo > h1 {
+  text-align: center;
+  text-shadow: #f0f0f0 1px 1px;
+  font-size: 80px;
+}
+#logo > h2 {
+  text-align: center;
+  color: #4a4a4a;
 }

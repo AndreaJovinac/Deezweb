@@ -36,8 +36,13 @@ async function VaChercherDanslAPI(motcles) {
 function Results() {
   // resultats.length = 23;
   console.log(resultats.length);
+  // Condition pour dire que si il y a rien alors tu affiches
+  // if ((resultats.length = null)) {
+  //   titleResultat.textContent = `Vous n'avez aucune musique`;
+  // } else {
   titleResultat.textContent =
     `Résultats de la recherche : ` + resultats.length + ` musiques`;
+  // }
   wrapArticle.innerHTML = resultats
     .map(
       (music) =>
