@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="https://e-cdns-files.dzcdn.net/js/min/dz.js"></script>
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/titre.css">
+    <script src="js/titre.js"></script>
+   
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html"> Accueil</a></li>
+                <li><a href="#">Mes favoris</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <picture>
+                <img src="img/logo_deezer.jpg" id="logo_deezer" alt="application Logo-Deezer">
+            </picture>
+        </section>
+        <div id="dz-root"></div>
+        <div id="controlers">
+            <input type="button" onclick="DZ.player.playAlbum(302127); return false;" value="Play Daft Punk - Discovery"/>
+            <input type="button" onclick="DZ.player.playAlbum(301775); return false;" value="Play Daft Punk - Homework"/>
+            <br/>
+            <input type="button" onclick="DZ.player.play(); return false;" value="play"/>
+            <input type="button" onclick="DZ.player.pause(); return false;" value="pause"/>
+            <input type="button" onclick="DZ.player.prev(); return false;" value="prev"/>
+            <input type="button" onclick="DZ.player.next(); return false;" value="next"/>
+            <br/>
+            <input type="button" onclick="DZ.player.setVolume(20); return false;" value="set Volume 20"/>
+            <input type="button" onclick="DZ.player.setVolume(80); return false;" value="set Volume 80"/>
+            <br/><br/><br/>
+        </div>
+        <div id="slider_seek" class="progressbarplay" >
+            <div class="bar" style="width: 0%;"></div>
+        </div>
+        
+        event_listener : <br/>
+        <pre id="event_listener" style="height:100px;overflow:auto;"></pre>
+    </main>
+</body>
+</html>

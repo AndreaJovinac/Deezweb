@@ -1,7 +1,6 @@
 {
   "name": "deezer_projet_andrea_jovinac",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -18,5 +17,6 @@
   "homepage": "https://github.com/AndreaJovinac/Deezweb#readme",
   "dependencies": {
     "sass": "^1.44.0"
-  }
+  },
+  "description": ""
 }
