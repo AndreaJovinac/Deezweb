@@ -47,11 +47,12 @@ function Results() {
     //${music.album.id}
     .map(
       (music) =>
-        `<a href="title.html/${music.album.id}">
+        `<a href="title.html?id=${music.id}">
           <article id="article">
               <div id="img_article" style="background-image: url(${music.album.cover_big}); background-size: cover;">
               </div>
               <div class="contentarticle">
+              <h1>${music.id} </h1>
               <h3 id="titrealbum">${music.album.title}</h3>
               <p id="artiste"> ${music.artist.name}</p>
               <p id="titremusique">${music.title_short}</p>
@@ -69,6 +70,7 @@ function Results() {
       </a>`
     )
     .join(" ");
+  console.log();
 }
 /* Recupérer l'élement qui est dans l'input */
 requete.addEventListener("input", (event) => {
