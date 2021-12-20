@@ -8,6 +8,7 @@ const wrapArticle = document.getElementById("wrap-article"); // on cible dans la
 const titleResultat = document.getElementById("h2-resultat");
 const formulaire = document.getElementById("formulaire");
 const requete = document.getElementById("search");
+
 // const footer = document.getElementById("footer");
 
 let resultats = []; // La variable te permet de varier les choses tu définis quelque chose qui va changer aprés, cette variable est un tableau
@@ -70,7 +71,6 @@ function Results() {
       </a>`
     )
     .join(" ");
-  console.log();
 }
 /* Recupérer l'élement qui est dans l'input */
 requete.addEventListener("input", (event) => {
