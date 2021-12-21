@@ -7,11 +7,11 @@
 // Etape 1 : On récupére l'ID du dans l'URL
 const trackId = window.location.search; //  on stock dans une variable les informations de URL
 const trackIdNum = trackId.slice(1 + 3); // on fais un retrait de vers la gauche pour pouvoir récupérer que le numero de l'ID
-const url = "https://api.deezer.com/track/" + trackIdNum; // dans la variable url on stock
+const url = "https://api.deezer.com/artist/" + trackIdNum; // dans la variable url on stock
 
 //--- On teste l'objet
-// console.log(trackId);
-// console.log(trackIdNum);
+console.log(trackId);
+console.log(trackIdNum);
 
 // Etape 2 : On cible des élements dans le DOM pour pouvoir les stocks dans la page HTML
 const player = document.getElementById("player");
@@ -40,11 +40,11 @@ async function VaChercherDanslAPI() {
   player.innerHTML = `
   
       
-      <img src="${resultats.album.cover_medium}" alt="${resultats.album.title}"/>
+      <img src="" alt=""/>
       
-      <h2>${resultats.album.title}
+      <h2>${resultats.artist.title}
       </h2>
-      <h3><a href="artiste.html?id=${resultats.artist.id}"> ${resultats.artist.name}</a>
+      <h3><a href=""> ${resultats.artist.name}</a>
       </h3>
       <p>${resultats.duration}
       </p>
@@ -63,7 +63,7 @@ async function VaChercherDanslAPI() {
       
       </div>
 `;
-  console.log(resultats.artist.id);
+  console.log(resultats.artist.name);
 }
 
 VaChercherDanslAPI();

@@ -53,7 +53,7 @@ function Results() {
               <div id="img_article" style="background-image: url(${music.album.cover_big}); background-size: cover;">
               </div>
               <div class="contentarticle">
-              <h1>${music.id} </h1>
+              
               <h3 id="titrealbum">${music.album.title}</h3>
               <p id="artiste"> ${music.artist.name}</p>
               <p id="titremusique">${music.title_short}</p>
