@@ -37,21 +37,18 @@ async function VaChercherDanslAPI() {
   // On teste le fetch pour voir si ça fonctionne
   //resultats = response.data
   console.log(resultats);
-}
-function AfficherResultat() {
-  player.innerHTML = `<a href="title.html?id=${resultats.id}">
-        <article id="article">
-            <div class="title">${resultats}
-            sdsk
-            </div>
-            
-            </div>
-      </article>
-    </a>`;
-
-  // console.log(resultats.id);
-  // console.log(data);
+  player.innerHTML = `
+  <article id="article">
+      <div class="artist">${resultats.artist.name}
+      </div>
+      <div class="artist">${resultats.artist.name}
+      </div>
+      
+      </div>
+</article>
+`;
+  console.log(resultats.artist.name);
 }
 
 VaChercherDanslAPI();
-AfficherResultat();
+// AfficherResultat();
