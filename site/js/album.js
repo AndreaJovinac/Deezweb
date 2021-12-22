@@ -15,6 +15,7 @@ const url = "https://api.deezer.com/album/" + trackIdNum; // dans la variable ur
 
 // Etape 2 : On cible des élements dans le DOM pour pouvoir les stocks dans la page HTML
 const content = document.getElementById("content");
+const tracks = document.getElementById("tracks");
 console.log(content);
 
 // Etape 3 : On stock les données de l'api dans un tableau que l'on va  créer
@@ -37,23 +38,29 @@ async function VaChercherDanslAPI() {
   // On teste le fetch pour voir si ça fonctionne
   //resultats = response.data
   console.log(resultats);
-  content.innerHTML = `
-  <figure>
-      <img src="${resultats.cover_medium}" alt="${resultats.title}"/>
-  </figure>
-      <h2>${resultats.title}</h2>
-      <h3><a href="artiste.html?id=${resultats.artist.id}"> ${resultats.artist.name}</a></h3>
-      
-  <p> ${resultats.tracks.data[0]}</p>
-`;
-  tracks.innerHTML = resultats.map(
-    () => `
-  <p> ${resultats.tracks.data[0]}</p>
-`
-  );
   console.log(resultats.artist.id);
   console.log(resultats.tracks.data[0].title);
-}
 
+  content.innerHTML = `
+    <figure>
+        <img src="${resultats.cover_medium}" alt="${resultats.title}"/>
+    </figure>
+        <h2>${resultats.title}</h2>
+        <h3><a href="artiste.html?id=${resultats.artist.id}"> ${resultats.artist.name}</a></h3>
+  `;
+  const titreTrack = resultats.tracks.data;
+  // Je stocke le tableau des tracks dans une variable titreTrack
+  tracks.innerHTML = titreTrack
+    .map(
+      // Je lui mets une méthode map() auquel j'intégre un paramètre qui s'appelle donneesTrack (je veux récupérer un élement spécifique à ce paramètre qui est le titre et la durée)
+      (donneesTrack) => `
+      <a href="title.html?id="${donneesTrack.id}">  ${donneesTrack.title} </a> 
+      <p>  ${donneesTrack.duration} </p>`
+    )
+    .join(" ");
+  console.log(titreTrack);
+  // console.log(resultats.artist.id);
+}
+// AfficherAlbum();
 VaChercherDanslAPI();
 // AfficherResultat();
