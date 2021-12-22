@@ -59,6 +59,12 @@ async function VaChercherDanslAPI() {
             Le navigateur ne peut pas afficher
             <code>audio</code> element.
     </audio>
+    <a href="album.html">
+    <button>
+    Voir l'album
+    </button>
+    </a>
+    </button>
 </figure>
       
       </div>

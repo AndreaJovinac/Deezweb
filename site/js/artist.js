@@ -40,30 +40,27 @@ async function VaChercherDanslAPI() {
   player.innerHTML = `
   
       
-      <img src="" alt=""/>
+      <img src="${resultats.picture}" alt=""/>
       
-      <h2>${resultats.artist.title}
+      <h2>${resultats.name}
       </h2>
-      <h3><a href=""> ${resultats.artist.name}</a>
+      <h3><a href=""> </a>
       </h3>
-      <p>${resultats.duration}
+      <p>Nombre de fan : ${resultats.nb_fan}
       </p>
-      <div class="album">${resultats.title}
+      <p>Nombre de d'album : ${resultats.nb_album}
+      </p>
+      <div class="album">
       </div>
-      <figure>
-    <figcaption>Ecoute le son </figcaption>
-    <audio
-        controls
-        src="${resultats.preview}">
-            Your browser does not support the
-            Le navigateur ne peut pas afficher
-            <code>audio</code> element.
-    </audio>
-</figure>
+      <a href="${resultats.link}">
+      <button>
+      En savoir plus
+      </button>
+    </a>
       
       </div>
 `;
-  console.log(resultats.artist.name);
+  console.log(resultats.artist);
 }
 
 VaChercherDanslAPI();
