@@ -37,6 +37,7 @@ async function VaChercherDanslAPI(motcles) {
 function Results() {
   // resultats.length = 23;
   console.log(resultats.length);
+  console.log(resultats);
   // Condition pour dire que si il y a rien alors tu affiches
   // if ((resultats.length = null)) {
   //   titleResultat.textContent = `Vous n'avez aucune musique`;
@@ -48,13 +49,15 @@ function Results() {
     //${music.album.id}
     .map(
       (music) =>
-        `<a href="title.html?id=${music.id}">
+        `
           <article id="article">
+          <a href="title.html?id=${music.id}">
               <div id="img_article" style="background-image: url(${music.album.cover_big}); background-size: cover;">
               </div>
+              </a>
               <div class="contentarticle">
               
-              <h3 id="titrealbum">${music.album.title}</h3>
+             <h3 id="titrealbum">${music.album.title}</h3>
               <p id="artiste"> ${music.artist.name}</p>
               <p id="titremusique">${music.title_short}</p>
               <p id="duree">${music.duration}</p>
@@ -64,11 +67,12 @@ function Results() {
               </button>
               <input type="checkbox" class="demo3" id="demo3">
               <button class="button2"> Écouter un extrait </button>
-              <button class="button2"> Consulter l'album </button>
-              <button class="button2"> Voir la fiche de l'artiste </button>
+              <button onclick="window.location.href = 'album.html?id=${music.album.id}';" class="button2"> Consulter l'album </button>
+               <button class="button2"> Voir la fiche de l'artiste</button>
+               <button onclick="window.location.href = 'https://fr.w3docs.com/';">Cliquez Ici</button>
               </div>
         </article>
-      </a>`
+      `
     )
     .join(" ");
 }
