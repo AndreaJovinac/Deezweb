@@ -38,7 +38,7 @@ async function VaChercherDanslAPI() {
   // On teste le fetch pour voir si ça fonctionne
   //resultats = response.data
   console.log(resultats);
-  console.log(resultats.artist.id);
+  console.log(resultats.id);
   console.log(resultats.tracks.data[0].title);
 
   content.innerHTML = `
@@ -54,11 +54,11 @@ async function VaChercherDanslAPI() {
     .map(
       // Je lui mets une méthode map() auquel j'intégre un paramètre qui s'appelle donneesTrack (je veux récupérer un élement spécifique à ce paramètre qui est le titre et la durée)
       (donneesTrack) => `
-      <a href="title.html?id="${donneesTrack.id}">  ${donneesTrack.title} </a> 
+      <a href="title.html?id=${donneesTrack.id}">  ${donneesTrack.title} </a> 
       <p>  ${donneesTrack.duration} </p>`
     )
     .join(" ");
-  console.log(titreTrack);
+
   // console.log(resultats.artist.id);
 }
 // AfficherAlbum();
