@@ -21,16 +21,18 @@ let resultats = []; // La variable te permet de varier les choses tu définis qu
 /********************************************************/
 
 async function VaChercherDanslAPI(motcles) {
-  const urlStandard = `https://api.deezer.com/search?q=${motcles}`;
-  const urlArtist = `https://api.deezer.com/search?q=artist:${motcles}`;
-  const urlAlbum = `https://api.deezer.com/search?q=album:${motcles}`;
-  const urlTrack = `https://api.deezer.com/search?q=track:"${motcles}"`;
+  const categorie = document.getElementById("filter").value;
+  const urlStandard = `https://api.deezer.com/search?q=${categorie}"${motcles}"`;
+  // const urlArtist = `https://api.deezer.com/search?q=artist:${motcles}`;
+  // const urlAlbum = `https://api.deezer.com/search?q=album:${motcles}`;
+  // const urlTrack = `https://api.deezer.com/search?q=track:"${motcles}"`;
 
   await fetch(urlStandard)
     .then((reponse) => reponse.json())
     .then((reponse) => (resultats = reponse.data)); // Tu mets la réponse dans la variable : resultats
   // On teste le fetch pour voir si ça fonctionne
   console.log(motcles);
+  console.log(urlStandard);
 }
 
 // La méthode textContent permet de récupérer le contenu sans les caractères spécifiques
@@ -47,8 +49,10 @@ function Results() {
   // if ((resultats.length = null)) {
   //   titleResultat.textContent = `Vous n'avez aucune musique`;
   // } else {
+
   titleResultat.textContent =
     `Résultats de la recherche : ` + resultats.length + ` musiques`;
+
   // }
   wrapArticle.innerHTML = resultats
     //${music.album.id}
@@ -101,4 +105,9 @@ formulaire.addEventListener("submit", (event) => {
   event.preventDefault();
 
   Results(); // On déclenche la function Results()
+});
+
+filter.addEventListener("select", (event) => {
+  event.preventDefault();
+  console.log("wesh");
 });

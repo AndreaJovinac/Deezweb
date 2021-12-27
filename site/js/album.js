@@ -55,7 +55,7 @@ async function VaChercherDanslAPI() {
       // Je lui mets une méthode map() auquel j'intégre un paramètre qui s'appelle donneesTrack (je veux récupérer un élement spécifique à ce paramètre qui est le titre et la durée)
       (donneesTrack) => `
       <a href="title.html?id=${donneesTrack.id}">  ${donneesTrack.title} </a> 
-      <p>  ${donneesTrack.duration} </p>`
+      <p> ${convertTime(donneesTrack.duration)} </p>`
     )
     .join(" ");
 

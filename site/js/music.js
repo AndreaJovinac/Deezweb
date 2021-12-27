@@ -40,13 +40,17 @@ async function VaChercherDanslAPI() {
   player.innerHTML = `
 
       
-      <img src="${resultats.album.cover_medium}" alt="${resultats.album.title}"/>
+      <img src="${resultats.album.cover_medium}" alt="${
+    resultats.album.title
+  }"/>
       
       <h2>${resultats.album.title}
       </h2>
-      <h3><a href="artiste.html?id=${resultats.artist.id}"> ${resultats.artist.name}</a>
+      <h3><a href="artiste.html?id=${resultats.artist.id}"> ${
+    resultats.artist.name
+  }</a>
       </h3>
-      <p>${resultats.duration}
+      <p>${convertTime(resultats.duration)}
       </p>
       <div class="album">${resultats.title}
       </div>

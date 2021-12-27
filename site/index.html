@@ -82,11 +82,11 @@
                     </div>
                     <label for="tri"></label>
                     <div id="select-customiser">
-                        <select name="categorie" id="pet-select">
-                            <option value="tous">Trier par</option>
-                            <option value="album">Album</option>
-                            <option value="artiste">Artiste</option>
-                            <option value="musique">Musique</option>
+                        <select name="categorie" id="filter" onchange="VaChercherDanslAPI()">
+                            <option value="">Trier par</option>
+                            <option value="album:">Album</option>
+                            <option value="artist:">Artiste</option>
+                            <option value="track:">Musique</option>
                             <option value="pluspopulaire">Les plus populaires</option>
                             <option value="mieuxnotes">Les mieux notés</option>
                         </select>
